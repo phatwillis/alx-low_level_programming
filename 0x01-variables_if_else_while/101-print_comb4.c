@@ -1,27 +1,26 @@
 #include <stdio.h>
 /**
- * main - prints all possible different combination of these digits
+ * main - Entry point
+ *
  * Return: Always 0 (Success)
+ * date:10-07-2023
  */
-
 int main(void)
 {
-	int ones = '0';
-	int tens = '0';
-	int hundreds = '0';
+	int i, j, k;
 
-	for (hundreds = '0' ; hundreds <= '9' ; hundreds++)
+	for (i = 48; i < 58; i++)
 	{
-		for (tens = '0' ; tens <= '9' ; tens++)
+		for (j = 49; j < 58; j++)
 		{
-			for (ones = '0' ; ones <= '9' ; ones++)
+			for (k = 50; k < 58; k++)
 			{
-				if (!((ones == tens) || (tens == hundreds) || (tens > ones) || (hundreds > tens)))
+				if (k > j && j > i)
 				{
-					putchar(hundreds);
-					putchar(tens);
-					putchar(ones);
-					if (!(ones == '9' && hundreds == '7' && tens == '8'))
+					putchar(i);
+					putchar(j);
+					putchar(k);
+					if (i != 55 || j != 56)
 					{
 						putchar(',');
 						putchar(' ');
@@ -29,8 +28,7 @@ int main(void)
 				}
 			}
 		}
-
-		putchar('\n');
-		return (0);
 	}
+	putchar('\n');
+	return (0);
 }
