@@ -1,18 +1,16 @@
 #include <stdio.h>
+
 /**
- * main - main function
- *
- * Return: Return: Always 0 (Success)
+ * main - Entry point
+ * author: steven
+ * Return: Always 0 (Success)
  */
-
 int main(void)
-	{
-	char alphabet;
+{
+	char steven;
 
-	for (alphabet = 'z'; alphabet >= 'a'; alphabet--)
-		{
-		putchart(alphabet);
-		}
+	for (steven = 'z'; steven >= 'a'; steven--)
+		putchar(steven);
 	putchar('\n');
 	return (0);
-	}
+}
