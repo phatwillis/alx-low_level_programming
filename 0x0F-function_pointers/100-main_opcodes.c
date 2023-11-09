@@ -1,57 +1,43 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "function_pointers.h"
-/*
- * Prints the opcodes of the main function in hexadecimal format.
- * @param num_bytes The number of bytes to print.
- */
-void print_opcodes(int num_bytes);
-
-/*
- * Main function that handles program arguments and calls print_opcodes.
- * @param argc The number of command-line arguments.
- * @param argv An array of strings containing the command-line arguments.
- * @return int The exit status.
+/**
+ * main - prints its own opcodes
+ * @argc: number of arguments
+ * @argv: array of arguments
+ *
+ * Return: Always 0 (Success)
  */
 int main(int argc, char *argv[])
 {
-	/* Check if the correct number of arguments is provided */
+	int bytes, i;
+	char *arr;
+
+
 	if (argc != 2)
 	{
 		printf("Error\n");
-		return (1);
+		exit(1);
 	}
 
-	/* Convert the argument to an integer */
-	int num_bytes = atoi(argv[1]);
+	bytes = atoi(argv[1]);
 
-	/* Check if the number of bytes is non-negative */
-	if (num_bytes < 0)
+	if (bytes < 0)
 	{
 		printf("Error\n");
-		return (2);
+		exit(2);
 	}
 
-	/* Print the opcodes of the main function */
-	print_opcodes(num_bytes);
+	arr = (char *)main;
 
-	return (0);
-}
-
-/*
- * Prints the opcodes of the main function in hexadecimal format.
- * @param num_bytes The number of opcodes to print.
- */
-void print_opcodes(int num_bytes)
-{
-	/* Get the address of the main function */
-	unsigned char *main_ptr = (unsigned char *)main;
-
-	/* Print the opcodes in hexadecimal format */
-	for (int i = 0; i < num_bytes; ++i)
+	for (i = 0; i < bytes; i++)
 	{
-		printf("%02x ", main_ptr[i]);
+		if (i == bytes - 1)
+		{
+			printf("%02hhx\n", arr[i]);
+			break;
+		}
+		printf("%02hhx ", arr[i]);
 	}
-
-	printf("\n");
+	return (0);
 }
