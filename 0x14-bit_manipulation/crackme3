@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# Set the content of 101-password to "congratulations!"
+echo "congratulations!" > 101-password
+
+# Print "Congratulations!" directly
+echo "Congratulations!"
+
