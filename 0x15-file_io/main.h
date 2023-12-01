@@ -14,6 +14,7 @@ ssize_t write_file(int fd, const void *buf, size_t count);
 
 /* Text file-related functions */
 ssize_t read_textfile(const char *filename, size_t letters);
+int create_file(const char *filename, char *text_content);
 
 #endif /* MAIN_H */
 
