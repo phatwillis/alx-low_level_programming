@@ -5,7 +5,7 @@
 
 
 * Compile all .c file/s to get its equivelent object file this way
-        `gcc -Wall -Werror -Wextra -pedantic -std=gnu89 -fpic -c *.c`
+        `gcc -Wall -Werror -Wextra -pedantic -std=c99 -fpic -c *.c`
 
 * Now create the shared library
 `gcc -shared *.o -o lib<libraryname>.so`
